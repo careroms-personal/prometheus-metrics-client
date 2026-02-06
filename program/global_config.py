@@ -1,0 +1,1 @@
+TEST_CONNECTION_PROMQL = "prometheus_build_info"

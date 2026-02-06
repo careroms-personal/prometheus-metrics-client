@@ -1,0 +1,36 @@
+name: ""
+version: v1
+
+connection:
+  url: ""
+  api_query_path: ""
+  timeout: 30
+
+queries:
+  - name: ""
+    type: "query"
+    promql: |
+      ""
+    export_config: #Optional
+      export_all_metric: false
+      export_metric_key:
+        - ""
+    
+  - name: ""
+    type: "query_range"
+    promql: |
+      ""
+    # Require for query_range
+    start: "30d"
+    end: "now"
+    step: "5m"
+    export_config: #Optional
+      export_all_metric: false
+      export_metric_key:
+        - ""
+
+output: #Optional
+  print_output: false
+  write_output: false
+  base_directory: "./results"
+  format: csv
