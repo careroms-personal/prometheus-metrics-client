@@ -15,6 +15,11 @@ queries:
       export_all_metric: false
       export_metric_key:
         - ""
+    processors: #Optional
+      - type: internal
+        name: ""
+      - type: external
+        name: ""
     
   - name: ""
     type: "query_range"
@@ -28,6 +33,11 @@ queries:
       export_all_metric: false
       export_metric_key:
         - ""
+    processors: #Optional
+      - type: internal
+        name: ""
+      - type: external
+        name: ""
 
 output: #Optional
   print_output: false
