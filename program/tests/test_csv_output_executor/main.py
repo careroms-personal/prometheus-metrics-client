@@ -1,7 +1,4 @@
-import sys, os
-
-from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+import os
 
 from connector.client import PrometheusClient
 from processors.output_executor import OutputExecutor

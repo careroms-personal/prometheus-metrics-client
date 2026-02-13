@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prometheus-metrics-client"
+version = "0.1.0"
+description = "A Python client for querying Prometheus/Mimir metrics with multi-platform support"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.31.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["program"]

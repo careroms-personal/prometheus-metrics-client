@@ -2,13 +2,9 @@
 Extract Prometheus data from query result
 """
 
-import sys
+import yaml, sys
+
 from pathlib import Path
-
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
-import yaml
-
 from pydantic import ValidationError
 from connector.client import PrometheusClient
 from models.promql_model import *
