@@ -24,6 +24,7 @@ class Processor:
     self.results = self.query_executor.execute()
 
     self.output_executor = OutputExecutor(self.results, self.query_config.output)
+    self.output_executor.execute()
 
   def _load_and_validate_config(self, config_path: str):
     if not Path(config_path).exists():
