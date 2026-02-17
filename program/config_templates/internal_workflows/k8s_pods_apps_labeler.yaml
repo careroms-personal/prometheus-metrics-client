@@ -1,0 +1,10 @@
+name: "k8s_pods_apps_labler"
+config:
+  deployments:
+    - ""
+  statefulsets:
+    - ""
+  daemonsets:
+    - ""
+  cronjobs:
+    - ""

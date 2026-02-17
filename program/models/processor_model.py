@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Dict, Union
+from typing import List, Dict, Union, Optional
 
 class ProcessorResultData(BaseModel):
   metric: Dict[str, str]
@@ -9,4 +9,5 @@ class ProcessorResult(BaseModel):
   query_name: str
   query_type: str
   promql: str
+  internal_workflows: Optional[List[str]] = None
   datas: List[ProcessorResultData]

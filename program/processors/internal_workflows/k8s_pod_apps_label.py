@@ -1,0 +1,5 @@
+from models.internal_workflows.k8s_pods_apps_label_model import K8SPodsAppsLabelerConfig
+from models.processor_model import ProcessorResultData
+
+def k8s_pod_apps_label(processor_data: ProcessorResultData, apps_label_config: K8SPodsAppsLabelerConfig):
+  pass

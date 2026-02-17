@@ -1,5 +1,4 @@
 name: ""
-version: v1
 
 connection:
   url: ""
@@ -15,12 +14,7 @@ queries:
       export_all_metric: false
       export_metric_key:
         - ""
-    processors: #Optional
-      - type: internal
-        name: ""
-      - type: external
-        name: ""
-    
+
   - name: ""
     type: "query_range"
     promql: |
@@ -33,11 +27,13 @@ queries:
       export_all_metric: false
       export_metric_key:
         - ""
-    processors: #Optional
-      - type: internal
-        name: ""
-      - type: external
-        name: ""
+    workflows: #Optional
+      internal:
+        - ""
+
+# Can see sample config in config_template
+internal_workflows: #Optional
+  - {}
 
 output: #Optional
   print_output: false

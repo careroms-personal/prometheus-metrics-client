@@ -114,6 +114,7 @@ class QueryExecutor:
         self.results.append(ProcessorResult(
           query_name=query.name,
           query_type=query.type,
+          internal_workflows=query.workflows.internal if query.workflows.internal else None,
           promql=query.promql,
           datas=query_results,
         ))
