@@ -1,18 +1,11 @@
-"""
-Executes Prometheus queries and returns structured results
-"""
-
-
-
 from datetime import datetime, timedelta
 from typing import Dict, Any, List
-from models.promql_model import QueryItem, ConnectionConfig
+from models.promql_model import QueryItem
 from models.processor_model import ProcessorResult, ProcessorResultData
 from connector.client import PrometheusClient
 
 class QueryExecutor:
-  def __init__(self, client: PrometheusClient, connection_config: ConnectionConfig, query_items: List[QueryItem]):
-    self.connection_config = connection_config
+  def __init__(self, client: PrometheusClient, query_items: List[QueryItem]):
     self.query_items = query_items
     self.client = client
     self.results = []
@@ -77,7 +70,7 @@ class QueryExecutor:
 
   def execute(self) -> List[ProcessorResult]:
     """Execute queries and return results"""
-    endpoint = f"{self.connection_config.url}/{self.connection_config.api_query_path}"
+    endpoint = f"{self.client.url}/{self.client.api_query_path}"
 
     for query in self.query_items:
       params = self._set_query_params(query)
@@ -91,7 +84,7 @@ class QueryExecutor:
         response = self.client.session.get(
           f"{endpoint}/{query.type}",
           params=params,
-          timeout=self.connection_config.timeout
+          timeout=self.client.timeout
         )
 
         response.raise_for_status()

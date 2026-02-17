@@ -41,6 +41,8 @@ queries:
 
 output: #Optional
   print_output: false
-  write_output: false
-  base_directory: "./results"
-  format: csv
+  write_options: #Optional
+    - base_directory: "./results"
+      format: csv
+    - base_directory: "./results"
+      format: json
