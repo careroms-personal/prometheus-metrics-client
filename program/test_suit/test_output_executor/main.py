@@ -1,5 +1,5 @@
+import os
 from test_suit.global_test_config import *
-
 from connector.client import PrometheusClient
 from processors.output_executor import OutputExecutor
 from processors.query_executor import QueryExecutor
@@ -9,6 +9,10 @@ def main():
   output_config = OutputConfig(
     print_output=False,
     write_options=[
+      OutputWriteOption(
+        base_directory="./result",
+        format=OutputFormatType.CSV,
+      ),
       OutputWriteOption(
         base_directory="./result",
         format=OutputFormatType.JSON,
