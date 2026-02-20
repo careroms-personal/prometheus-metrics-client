@@ -29,16 +29,5 @@ class OutputExecutor:
         else:
           print(f"❌ Unsupported format: {write_option.format}")
 
-    # if self.output_config.write_output == True:
-    #   if self.output_config.format in self.exporter_selector:
-    #     write_function = self.exporter_selector.get(self.output_config.format)
-
-    #     # Processor result is list of all queries result from queries config, this is write result one by one
-    #     for result in self.processor_results:
-    #       write_function(result, self.output_config)  
-          
-    #   else:
-    #     print(f"❌ Unsupported format: {self.output_config.format}")
-
   def execute(self):
     self._process_output()
