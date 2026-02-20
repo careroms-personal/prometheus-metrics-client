@@ -16,7 +16,7 @@ class Processor:
     self._load_and_validate_config(config_path=config_path)
     self.client = PrometheusClient(self.query_config.connection)
 
-    self.query_executor = QueryExecutor(self.client, self.query_config.connection, self.query_config.queries)
+    self.query_executor = QueryExecutor(self.client, self.query_config.queries)
     self.results = self.query_executor.execute()
 
     self.output_executor = OutputExecutor(self.results, self.query_config.output)

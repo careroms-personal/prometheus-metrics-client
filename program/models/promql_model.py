@@ -28,16 +28,17 @@ class QueryItem(BaseModel):
   #Export option
   export_config: Optional[QueryExportConfig] = None
 
+class OutputWriteOption(BaseModel):
+  base_directory: str
+  format: OutputFormatType
+
 class OutputConfig(BaseModel):
-  base_directory: str = ""
   print_output: bool = False
-  write_output: bool = False
-  format: Optional[OutputFormatType] = OutputFormatType.CSV
-  timestamp_subdirectory: bool = False
+  write_options: List[OutputWriteOption]
 
 class QueryConfig(BaseModel):
   name: str
   version: str
   connection: ConnectionConfig
   queries: List[QueryItem]
-  output: Optional[OutputConfig]
+  output: Optional[OutputConfig] = None
