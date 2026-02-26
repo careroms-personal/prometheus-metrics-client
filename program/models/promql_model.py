@@ -38,7 +38,6 @@ class OutputConfig(BaseModel):
 
 class QueryConfig(BaseModel):
   name: str
-  version: str
   connection: ConnectionConfig
   queries: List[QueryItem]
   output: Optional[OutputConfig] = None

@@ -8,7 +8,8 @@ def main():
   parser.add_argument("-c", "--config", required=True, help="Path to config Yaml file")
   args = parser.parse_args()
 
-  processer = Processor(args.config)
+  processor = Processor(args.config)
+  processor.execute()
  
 if __name__ == "__main__":
   main()

@@ -1,4 +1,3 @@
-import os
 from test_suit.global_test_config import *
 from connector.client import PrometheusClient
 from processors.output_executor import OutputExecutor

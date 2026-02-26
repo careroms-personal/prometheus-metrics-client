@@ -16,7 +16,10 @@ class OutputExecutor:
     }
 
   def _process_output(self):
-    if self.output_config.print_output == True:
+    if self.output_config is None:
+      return
+
+    if self.output_config.print_output:
       print(self.processor_results)
 
     if self.output_config.write_options:

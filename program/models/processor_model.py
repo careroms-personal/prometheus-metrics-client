@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Dict, Union
+from typing import List, Dict, Union, Optional
 
 class ProcessorResultData(BaseModel):
   metric: Dict[str, str]
