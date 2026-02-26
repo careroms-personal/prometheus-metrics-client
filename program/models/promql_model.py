@@ -33,8 +33,8 @@ class OutputWriteOption(BaseModel):
   format: OutputFormatType
 
 class OutputConfig(BaseModel):
-  print_output: bool = False
-  write_options: List[OutputWriteOption]
+  print_output: Optional[bool] = False
+  write_options: Optional[List[OutputWriteOption]] = None
 
 class QueryConfig(BaseModel):
   name: str
