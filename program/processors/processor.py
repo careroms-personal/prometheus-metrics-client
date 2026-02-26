@@ -10,7 +10,6 @@ from connector.client import PrometheusClient
 from models.promql_model import *
 from .query_executor import QueryExecutor
 from .output_executor import OutputExecutor
-from .internal_workflows.internal_workflows_executor import InternalWorkflowsExecutor
 
 class Processor:
   def __init__(self, config_path: str):
@@ -39,7 +38,5 @@ class Processor:
     self.query_executor = QueryExecutor(self.client, self.query_config.queries)
     self.results = self.query_executor.execute()
 
-    self.internal_workflow_executor = InternalWorkflowsExecutor(self.results)
-    
     self.output_executor = OutputExecutor(self.results, self.query_config.output)
     self.output_executor.execute()

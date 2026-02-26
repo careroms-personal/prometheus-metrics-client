@@ -9,5 +9,4 @@ class ProcessorResult(BaseModel):
   query_name: str
   query_type: str
   promql: str
-  internal_workflows: Optional[List[str]] = None
   datas: List[ProcessorResultData]

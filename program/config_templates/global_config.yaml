@@ -27,14 +27,7 @@ queries:
       export_all_metric: false
       export_metric_key:
         - ""
-    workflows: #Optional
-      internal:
-        - ""
-
-# Can see sample config in config_template
-internal_workflows: #Optional
-  - {}
-
+        
 output: #Optional
   print_output: false
   write_options: #Optional

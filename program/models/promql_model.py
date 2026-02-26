@@ -2,9 +2,6 @@ from pydantic import BaseModel
 from typing import List, Literal, Optional
 from enum import StrEnum
 
-class Workflows(BaseModel):
-  internal: List[str]
-
 class OutputFormatType(StrEnum):
   CSV = "csv"
   JSON = "json"
@@ -31,9 +28,6 @@ class QueryItem(BaseModel):
   #Export option
   export_config: Optional[QueryExportConfig] = None
 
-  #Workflow option
-  workflows: Optional[Workflows] = None
-
 class OutputWriteOption(BaseModel):
   base_directory: str
   format: OutputFormatType
@@ -46,5 +40,4 @@ class QueryConfig(BaseModel):
   name: str
   connection: ConnectionConfig
   queries: List[QueryItem]
-  internal_workflows: Optional[List[dict]] = None
   output: Optional[OutputConfig] = None
